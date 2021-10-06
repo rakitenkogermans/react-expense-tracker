@@ -10,7 +10,7 @@ const ExpenseForm = (props) => {
 
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
-    const [enteredDate, setEnteredDate] = useState('');
+    const [enteredDate, setEnteredDate] = useState(new Date().toISOString().substr(0, 10));
 
     const titleChangeHandler = event => {
         // setUserInput({
@@ -41,15 +41,16 @@ const ExpenseForm = (props) => {
 
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         }
 
         props.onSaveExpenseData(expenseData);
+        props.onCloseForm();
 
         setEnteredTitle('');
         setEnteredAmount('');
-        setEnteredDate('');
+        setEnteredDate(new Date().toISOString().substr(0, 10));
     }
 
     return (
@@ -69,7 +70,8 @@ const ExpenseForm = (props) => {
                 </div>
             </div>
             <div className="new-expense__actions">
-                <button type="submit">Add expense</button>
+                <button type="button" onClick={props.onCloseForm}>Close</button>
+                <button type="submit" disabled={enteredTitle.length === 0 || enteredAmount.length === 0 || enteredDate.length === 0}>Add expense</button>
             </div>
         </form>
     );
