@@ -3,7 +3,6 @@ import Card from "../UI/Card";
 import './ExpenseItem.scss';
 
 function ExpenseItem(props) {
-
     return (
         <Card className="expense-item">
             <ExpenseDate date={props.date}/>
