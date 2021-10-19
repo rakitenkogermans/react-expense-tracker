@@ -1,3 +1,10 @@
+# React Expense Tracker App
+
+This is very simple mini project which was created while learning ReactJS with online courses. You can add items and track expense of them. And you can filter items by selecting year.
+
+<a href="https://rakitenkogermans.github.io/react-expense-tracker/" style="color:#43cea2; font-size: 32px; font-weight: 900;">Link online hosted on github pages 🔗
+</a>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
